@@ -1,0 +1,334 @@
+body {
+    background: #2d3536;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #879597;
+    font-weight: 800;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+.menu-btn {
+    position: fixed;
+    top: 7px;
+    left: 46px;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 19px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+
+.menu-btn span:before {
+    bottom: 6px;
+}
+
+.menu-btn span:after {
+    top: 6px;
+}
+
+#menu-btn-check:checked~.menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+    /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+#menu-btn-check:checked~.menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#menu-btn-check:checked~.menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: rgba(0, 0, 0, 0.406);
+    backdrop-filter: blur(12px);
+    transition: .6s;
+}
+
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+#menu-btn-check:checked~.menu-content {
+    left: 0;
+    /*メニューを画面内へ*/
+}
+
+.logo {
+    text-align: center;
+}
+
+
+.head-text {
+    font-size: 27px;
+    color: white;
+    padding-top: 30px;
+    padding-left: 50px;
+}
+
+
+
+.main-text {
+    padding-left: 50px;
+    padding-right: 50px;
+    word-wrap: break-word;
+}
+
+.link {
+    text-decoration: none;
+    color: #5fd7c2;
+}
+
+
+@media (min-width: 425px) {
+
+    .top {
+        padding: 7px 2.5rem;
+        font-size: 17px;
+        color: white;
+    }
+
+    .menu-btn {
+        left: 46px;
+    }
+
+    .head-text {
+        padding-left: 50px;
+    }
+
+    .main-text {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    footer {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+
+}
+
+@media (max-width: 424px) {
+
+    .top {
+        padding: 7px 0.5rem;
+        font-size: 17px;
+        color: white;
+    }
+
+    .menu-btn {
+        left: 20px;
+    }
+
+    .head-text {
+        padding-left: 10px;
+    }
+
+    .main-text {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    footer {
+        padding-left: 10px padding-right: 10px;
+    }
+
+
+
+}
+
+.icon {
+    width: 35px;
+}
+
+.btn {
+    padding: 12px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    padding: 12px;
+    border: 1px solid #ffffff83;
+    color: #ffffff83;
+    text-decoration: none;
+    box-shadow: 0 0px 15px 1px rgba(255, 255, 255, 0.219);
+    transition: .2s;
+}
+
+.btn:active {
+    padding: 12px;
+    border: 1px solid #ffffffb1;
+    color: #ffffffb1;
+    text-decoration: none;
+    box-shadow: 0 0px 25px 1px rgba(255, 255, 255, 0.577);
+    transition: .2s;
+}
+
+.icon2 {
+    width: 30px;
+}
+
+.icon3 {
+    width: 15px;
+}
+
+.hr {
+    border: none;
+    background-color: white height:2px;
+}
+
+footer {
+    background-color: #2b3e574b;
+    backdrop-filter: blur(12px);
+    padding-left: 50px;
+    padding-right: 50px;
+    border-top: 1px solid rgb(106, 106, 106);
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.song {
+    width: 100%; /* スマートフォンでは100%幅を使用 */
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.song a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: left; /* 画像と文字の左側を合わせる */
+}
+
+.song img {
+    width: 100%;
+    height: auto;
+    text-align: left; /* 画像と文字の左側を合わせる */
+}
+
+.song p {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding-top: 10px;
+    font-size: 22px;
+}
+
+@media screen and (min-width: 768px) { /* 768px以上のデバイスはデスクトップと見なす */
+    .song {
+        width: calc(33.33% - 20px); /* マージンを考慮して33.33%の幅に設定 */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.toggle-button {
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+.toggle-button button {
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}   
+
+
+
+
+
+.toggle-button button:hover {
+    padding: 12px;
+    border: 1px solid #ffffff83;
+    color: #ffffff83;
+    text-decoration: none;
+    box-shadow: 0 0px 15px 1px rgba(255, 255, 255, 0.219);
+    transition: .2s;
+}
+
+.toggle-button button:active {
+    padding: 12px;
+    border: 1px solid #ffffffb1;
+    color: #ffffffb1;
+    text-decoration: none;
+    box-shadow: 0 0px 25px 1px rgba(255, 255, 255, 0.577);
+    transition: .2s;
+}
